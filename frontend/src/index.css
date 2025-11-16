@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+html, body {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Adjust for your navbar height */
+    -webkit-overflow-scrolling: touch; /* Enables smooth kinetic scrolling on mobile */
+  }
+  
+  
