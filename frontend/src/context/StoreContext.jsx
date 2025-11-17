@@ -16,7 +16,7 @@ const StoreContextProvider = ({ children }) => {
   useEffect(() => {
     const allBlogs = async () => {
       try {
-        const response = await fetch("http://localhost:5000/blogs/all", {
+        const response = await fetch("https://nextblog-3-backend.onrender.com/blogs/all", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

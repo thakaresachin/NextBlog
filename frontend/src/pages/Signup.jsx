@@ -34,7 +34,7 @@ const Signup = () => {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/users/register",
+        "https://nextblog-3-backend.onrender.com/users/register",
         data,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

@@ -14,7 +14,7 @@ const YourBlogs = () => {
   useEffect(() => {
     const fetchUserBlogs = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/blogs/user/blog", {
+        const res = await axios.get("https://nextblog-3-backend.onrender.com/blogs/user/blog", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setBlogs(res.data);
@@ -29,7 +29,7 @@ const YourBlogs = () => {
   // 🔹 Delete Blog
   const deleteBlog = async (blogId) => {
     try {
-      await axios.delete(`http://localhost:5000/blogs/deleteblog/${blogId}`, {
+      await axios.delete(`https://nextblog-3-backend.onrender.com/blogs/deleteblog/${blogId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setBlogs(blogs.filter((b) => b._id !== blogId));
@@ -64,7 +64,7 @@ const YourBlogs = () => {
       if (editBlog.image) formData.append("image", editBlog.image);
 
       const res = await axios.put(
-        `http://localhost:5000/blogs/updateblog/${editBlog._id}`,
+        `https://nextblog-3-backend.onrender.com/blogs/updateblog/${editBlog._id}`,
         formData,
         {
           headers: {

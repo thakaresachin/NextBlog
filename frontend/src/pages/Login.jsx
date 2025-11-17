@@ -23,7 +23,7 @@ const Login = () => {
     try {
       setLoading(true);
 
-      const res = await axios.post("http://localhost:5000/users/login", {
+      const res = await axios.post("https://nextblog-3-backend.onrender.com/users/login", {
         email,
         password,
       });

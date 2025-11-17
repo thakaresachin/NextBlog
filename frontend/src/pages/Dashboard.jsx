@@ -31,7 +31,7 @@ const Dashboard = () => {
     data.append("image", formData.image);
 
     try {
-      const res = await axios.post("http://localhost:5000/blogs/createblog", data, {
+      const res = await axios.post("https://nextblog-3-backend.onrender.com/blogs/createblog", data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
@@ -48,7 +48,7 @@ const Dashboard = () => {
   useEffect(() => {
     const allBlogs = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/blogs/user/blog", {
+        const res = await axios.get("https://nextblog-3-backend.onrender.com/blogs/user/blog", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setBlogs(res.data);
@@ -61,7 +61,7 @@ const Dashboard = () => {
 
   const removeBlog = async (blogId) => {
     try {
-      const res = await axios.delete(`http://localhost:5000/blogs/deleteblog/${blogId}`, {
+      const res = await axios.delete(`https://nextblog-3-backend.onrender.com/blogs/deleteblog/${blogId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success(res.data.message);
